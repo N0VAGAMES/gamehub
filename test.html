@@ -4,6 +4,31 @@
     <h1>Testing Arrow</h1>
   </head>
   <body>
-    
+    <script>
+$(window).on('mousemove', function () {
+  $('.barhide').addClass('show');
+  try {
+    clearTimeout(timer);
+  } catch (e) {}
+  timer = setTimeout(function () {
+    $('.barhide').removeClass('show');
+  }, 1000);
+});
+    </script>
+    <style>
+.barhide {
+  background: #333;
+  color: #fff;
+  display: block;
+  opacity: 0;
+  transition: all 1.5s ease;
+}
+
+.barhide.show {
+  opacity: 1;
+  display: none;
+}
+    </style>
+    <button class="barhide">Hello</button>
   </body>
 </html>
