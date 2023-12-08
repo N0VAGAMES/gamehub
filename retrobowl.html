@@ -1,3 +1,84 @@
 <title>Gamehub - Retro Bowl</title>
 <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 <iframe src="https://purepro4561.github.io/RB.html" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+<center><button onclick="window.location.href = 'https://n0vagames.github.io/gamehub/';" class="obutton">Go Back to Gamehub</button></center>
+<!--START OF FULLSCREEN CODE-->
+    <style>
+    .obutton {
+      background-color: gray;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border-radius: 20px;
+      font-size: 15px;
+      position: absolute;
+      top:  17px;
+      right:  54px;
+    }
+    .obutton:hover {
+        transform: scale(1.1);
+    }
+
+body, ::backdrop {
+    background: purple;
+}
+#fullscreen-button {
+    position: absolute;
+    top:  15px;
+    right:  15px;
+    background: gray;
+    border:  0;
+    width:  40px;
+    height:  40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    transition:  transform .3s;
+    cursor:  pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#fullscreen-button:hover {
+    transform: scale(1.125);
+}
+#fullscreen-button svg:nth-child(2) { 
+    display: none;
+}
+[fullscreen] #fullscreen-button svg:nth-child(1) {
+    display: none;
+}
+[fullscreen] #fullscreen-button svg:nth-child(2) {
+    display: inline-block;
+}
+    </style>
+    <script>
+    if (document.fullscreenEnabled) {
+        const fullscreen_button = document.createElement("button");
+        fullscreen_button.setAttribute('id','fullscreen-button');
+        fullscreen_button.addEventListener("click", toggle_fullscreen);
+        fullscreen_button.innerHTML  = `
+            <svg viewBox="0 0 24 24">
+                <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 
+                7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+            </svg>
+            <svg viewBox="0 0 24 24">
+                <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 
+                11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/>
+            </svg>
+        `;
+        document.body.appendChild(fullscreen_button);
+    }
+    
+    function toggle_fullscreen() {
+        if (!document.fullscreenElement) {
+            document.body.requestFullscreen();
+            document.body.setAttribute("fullscreen",""); 
+        } else {
+            document.exitFullscreen();
+            document.body.removeAttribute("fullscreen"); 
+        }
+    } 
+    </script>
+<!-- ENDING OF FULLSCREEN CODE BTW NOVA I DIDN'T MAKE THIS BUT I FOUND IT, DON'T YOU DARE TOUCH THIS TRITICISM YOU NERD WHO PAYS ATTENTION IN MATH L BOZO -->
